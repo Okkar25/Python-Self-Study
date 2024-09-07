@@ -1,0 +1,149 @@
+Here are some Python problems involving string methods like slice, join, and split, along with their solutions:
+
+Problem 1: Extract Substring Using Slice
+Problem:
+Given a string, extract the substring that starts from the 3rd character and ends at the 8th character (inclusive).
+
+Example:
+Input: "Hello, World!"
+Output: "llo, W"
+
+Solution:
+
+python
+Copy code
+def extract_substring(s):
+    return s[2:8]
+
+# Test
+print(extract_substring("Hello, World!"))  # Output: "llo, W"
+Problem 2: Join a List of Words
+Problem:
+Given a list of words, join them into a single string separated by spaces.
+
+Example:
+Input: ["Python", "is", "fun"]
+Output: "Python is fun"
+
+Solution:
+
+python
+Copy code
+def join_words(words):
+    return " ".join(words)
+
+# Test
+print(join_words(["Python", "is", "fun"]))  # Output: "Python is fun"
+Problem 3: Split a Sentence into Words
+Problem:
+Given a sentence, split it into a list of words.
+
+Example:
+Input: "Python is fun"
+Output: ["Python", "is", "fun"]
+
+Solution:
+
+python
+Copy code
+def split_sentence(sentence):
+    return sentence.split()
+
+# Test
+print(split_sentence("Python is fun"))  # Output: ["Python", "is", "fun"]
+Problem 4: Reverse Words in a Sentence
+Problem:
+Given a sentence, reverse the order of words.
+
+Example:
+Input: "Hello World"
+Output: "World Hello"
+
+Solution:
+
+python
+Copy code
+def reverse_words(sentence):
+    words = sentence.split()
+    reversed_words = words[::-1]
+    return " ".join(reversed_words)
+
+# Test
+print(reverse_words("Hello World"))  # Output: "World Hello"
+Problem 5: Extract Domain from Email
+Problem:
+Given an email address, extract the domain name.
+
+Example:
+Input: "user@example.com"
+Output: "example.com"
+
+Solution:
+
+python
+Copy code
+def extract_domain(email):
+    return email.split('@')[-1]
+
+# Test
+print(extract_domain("user@example.com"))  # Output: "example.com"
+Problem 6: Replace Spaces with Hyphens
+Problem:
+Given a string, replace all spaces with hyphens.
+
+Example:
+Input: "Python is fun"
+Output: "Python-is-fun"
+
+Solution:
+
+python
+Copy code
+def replace_spaces(s):
+    return s.replace(" ", "-")
+
+# Test
+print(replace_spaces("Python is fun"))  # Output: "Python-is-fun"
+Problem 7: Get First and Last Word
+Problem:
+Given a sentence, return a tuple containing the first and last words.
+
+Example:
+Input: "Learning Python is fun"
+Output: ("Learning", "fun")
+
+Solution:
+
+python
+Copy code
+def first_and_last_word(sentence):
+    words = sentence.split()
+    return (words[0], words[-1])
+
+# Test
+print(first_and_last_word("Learning Python is fun"))  # Output: ("Learning", "fun")
+Problem 8: Abbreviate a Name
+Problem:
+Given a full name, return the initials of the first name and the full last name.
+
+Example:
+Input: "John Doe"
+Output: "J. Doe"
+
+Solution:
+
+python
+Copy code
+def abbreviate_name(full_name):
+    parts = full_name.split()
+    return f"{parts[0][0]}. {parts[1]}"
+
+# Test
+print(abbreviate_name("John Doe"))  # Output: "J. Doe"
+These problems should help you practice and understand how to use string methods like slice, join, and split in Python.
+
+
+
+
+
+

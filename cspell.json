@@ -1,0 +1,23 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "dictionaryDefinitions": [],
+    "dictionaries": [],
+    "words": [
+        "aeiou",
+        "Aung",
+        "Bieber",
+        "dupli",
+        "icecream",
+        "Misubishi",
+        "Okkar",
+        "Sayar",
+        "Skywalker",
+        "Thet",
+        "Thiha",
+        "thon",
+        "unindexed"
+    ],
+    "ignoreWords": [],
+    "import": []
+}

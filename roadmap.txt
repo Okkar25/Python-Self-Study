@@ -1,0 +1,105 @@
+
+1. Fundamentals of Python
+Objective: Understand the basics of Python syntax and structure.
+
+Syntax and Variables:
+
+Learn about Python's syntax, indentation, and how to declare variables.
+Basic data types: int, float, str, bool.
+Data Structures:
+
+Lists, Tuples, Sets, Dictionaries
+List comprehensions
+Control Flow:
+
+if, elif, else statements
+for loops and while loops
+break, continue, and pass statements
+Functions:
+
+Defining functions with def
+Arguments and return values
+Default arguments, *args and **kwargs
+Lambda functions
+Input/Output:
+
+Reading input from the user
+Printing output to the console
+File handling (open, read, write, close)
+Resources:
+
+Books: "Automate the Boring Stuff with Python" by Al Sweigart
+Online courses: Python for Everybody (Coursera)
+
+
+
+
+
+2. Intermediate Python
+Objective: Build a deeper understanding of Python's capabilities and start working on small projects.
+
+Object-Oriented Programming (OOP):
+
+Classes and objects
+Methods and attributes
+Inheritance and polymorphism
+Magic methods (e.g., __init__, __str__, __repr__)
+Modules and Packages:
+
+Importing and using standard libraries (math, os, sys, datetime)
+Creating and using your own modules
+Virtual environments and package management with pip
+Error Handling:
+
+Exceptions and try, except, finally blocks
+Custom exceptions
+File Handling:
+
+Reading from and writing to files
+Working with CSV, JSON, and XML data
+Working with Libraries:
+
+requests for making HTTP requests
+re for regular expressions
+itertools for advanced iteration
+collections for specialized data structures
+Projects:
+
+Build a command-line to-do list application.
+Create a simple web scraper.
+Develop a small text-based game.
+
+
+
+
+
+
+3. Advanced Python
+Objective: Gain proficiency in advanced Python concepts and start contributing to larger projects.
+
+Advanced Data Structures:
+
+Using and customizing collections (deque, defaultdict, Counter)
+Advanced list and dict comprehensions
+Decorators and Generators:
+
+Understanding and creating decorators
+Using and creating generators with yield
+Concurrency and Parallelism:
+
+Threading and multiprocessing
+Asyncio for asynchronous programming
+Understanding the Global Interpreter Lock (GIL)
+Metaprogramming:
+
+Introspection and dynamic attributes
+Creating and using metaclasses
+Testing:
+
+Unit testing with unittest and pytest
+Test-driven development (TDD)
+Mocking and patching
+Memory Management:
+
+Understanding Python's memory model
+Reference counting and garbage collection
