@@ -21,8 +21,13 @@ const newFruits = freshFruits.map((fruit) =>
 // const arr = Array.from({ length: 5 }, () => console.log("This is js"));
 
 // const [x : value , y, ...z] = freshFruits
-const [x , y, ...z] = freshFruits
+const [x, y, ...z] = freshFruits;
 
-console.log(x);
-console.log(y);
-console.log(z);
+// console.log(x);
+// console.log(y);
+// console.log(z);
+
+const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const filterItems = numArr.filter((num) => num % 2 === 1);
+console.log(filterItems);

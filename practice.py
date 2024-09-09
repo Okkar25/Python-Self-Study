@@ -53,4 +53,30 @@ languages = ["JavaScript","Python","Java","PHP", "C++", "SQL", "Go","Ruby"]
 # plt.show()
 
 
+nums = [1,2,3,4,5]
+
+new_list = list(map(lambda x : x ** 2, nums))
+
+new_list = list(filter(lambda x : x % 2 == 1, nums))
+
+# print(new_list)
+
+# unpacking
+# print(*nums)
+
+[a, *b, c] = nums
+
+# print(a , b, c)
+
+
+def order_pizza(size, *toppings, **details):
+    print(f"I want a {size}-sized pizza with the following toppings : ")
+    for top in toppings:
+        print(f"- {top}")
+    
+    print("\nDetails of the order : ")
+    for k,v in details.items():
+        print(f"- {k} : {v}")
+
+# order_pizza("large", "cheese", "pepperoni", "sausage", delivery=True, tip=5)
 

@@ -32,7 +32,7 @@ def greeting(first_name, last_name):
 
 # print(a,b,c)
 
-# **** Arbitrary Arguments, *args
+# ***** Arbitrary Arguments, *args
 # function will receive a tuple of arguments, and can access the items accordingly
 # Arbitrary Arguments are often shortened to *args in Python documentations
 
@@ -134,6 +134,17 @@ def combine_func(a, b, /, *, c , d):
 
 # def combine_func(*, c , d, a, b, /): # error 
 #     print(a + b + c + d)
+
+def order_pizza(size, *toppings, **details):
+    print(f"I want a {size}-sized pizza with the following toppings : ")
+    for top in toppings:
+        print(f"- {top}")
+    
+    print("\nDetails of the order : ")
+    for k,v in details.items():
+        print(f"- {k} : {v}")
+
+# order_pizza("large", "cheese", "pepperoni", "sausage", delivery=True, tip=5)
 
 
 # ----------------------------------------------------------------------------------------------------
