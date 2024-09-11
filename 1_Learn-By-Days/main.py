@@ -1067,3 +1067,20 @@ text = "The foolish fox tried to catch the moon in the water reflection"
 
 
 
+# * docstring
+
+def add(a, b):
+    """
+    This function takes two numbers as inputs and returns their sum.
+
+    Parameters:
+    a (int or float): The first number.
+    b (int or float): The second number.
+
+    Returns:
+    int or float: The sum of the two numbers.
+    """
+    return a + b
+
+# Access the docstring
+# print(add.__doc__)
