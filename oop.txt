@@ -1,0 +1,120 @@
+
+In Python, there are several core Object-Oriented Programming (OOP) concepts, similar to other OOP languages. These key OOP principles are:
+
+1. Encapsulation
+Definition: Encapsulation is the bundling of data (attributes) and methods (functions) that operate on the data into a single unit or class. It also refers to the idea of restricting direct access to some of the object's components to prevent the accidental modification of data.
+Example:
+python
+Copy code
+class Person:
+    def __init__(self, name, age):
+        self.__name = name  # Private attribute
+        self.__age = age    # Private attribute
+
+    def get_name(self):
+        return self.__name
+Purpose: It hides the internal details and only exposes a limited interface to the user.
+2. Inheritance
+Definition: Inheritance allows one class (child class) to inherit properties and methods from another class (parent class). This promotes code reuse and establishes a relationship between classes.
+Example:
+python
+Copy code
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        pass
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+Purpose: It enables the creation of a new class that is based on an existing class, thus fostering reusability and hierarchical relationships between classes.
+3. Polymorphism
+Definition: Polymorphism allows objects of different classes to be treated as objects of a common base class. It also means using the same method or operator in different ways for different objects.
+Example:
+python
+Copy code
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+class Cat:
+    def speak(self):
+        return "Meow!"
+
+def animal_sound(animal):
+    print(animal.speak())
+
+dog = Dog()
+cat = Cat()
+
+animal_sound(dog)  # Woof!
+animal_sound(cat)  # Meow!
+Purpose: It allows for flexibility in using objects of different classes through a common interface.
+4. Abstraction
+Definition: Abstraction means hiding the implementation details of a method or class while exposing only the functionality to the user. In Python, abstraction can be achieved using abstract classes (with the abc module) and interfaces.
+Example:
+python
+Copy code
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"
+Purpose: It simplifies complex systems by breaking them down into smaller, manageable parts and exposing only the relevant details.
+5. Composition
+Definition: Composition refers to the concept where one class contains an object of another class to utilize its functionality. This is known as a "has-a" relationship.
+
+Example:
+
+python
+Copy code
+class Engine:
+    def start(self):
+        return "Engine started"
+
+class Car:
+    def __init__(self):
+        self.engine = Engine()
+
+    def drive(self):
+        return self.engine.start()
+Purpose: It is used when you want to build a class from multiple components, combining different objects to build complex functionality.
+
+6. Method Overriding
+Definition: This is a specific form of polymorphism where a child class provides a specific implementation for a method that is already defined in its parent class.
+Example:
+python
+Copy code
+class Animal:
+    def sound(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def sound(self):
+        return "Woof!"
+7. Method Overloading (Not native in Python)
+Definition: Method overloading allows multiple methods with the same name to exist but with different parameters. Python does not support method overloading natively, but you can achieve similar functionality using default arguments or by checking types.
+Example:
+python
+Copy code
+class Calculator:
+    def add(self, a, b, c=0):
+        return a + b + c
+Summary:
+The main OOP concepts in Python are:
+
+Encapsulation
+Inheritance
+Polymorphism
+Abstraction
+Composition
+Method Overriding
+Method Overloading (Not natively supported but can be mimicked)
+Each of these concepts plays an important role in designing and implementing object-oriented software systems in Python.

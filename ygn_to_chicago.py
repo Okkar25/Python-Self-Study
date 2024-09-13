@@ -14,7 +14,7 @@ def convert_yg_to_chicago(yg_time_str):
     return chicago_time.strftime("%Y-%m-%d %H:%M:%S")
 
 # Example usage:
-yg_time_str = "2024-09-03 10:27:00"  # Replace with the actual YGn time
+yg_time_str = "2024-09-11 20:49:00"  # Replace with the actual YGn time
 chicago_time_str = convert_yg_to_chicago(yg_time_str)
 
 print("yangon time:", yg_time_str)

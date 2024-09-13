@@ -30,4 +30,35 @@ const [x, y, ...z] = freshFruits;
 const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const filterItems = numArr.filter((num) => num % 2 === 1);
-console.log(filterItems);
+// console.log(filterItems);
+
+const fruits = [
+  "apple",
+  "hello",
+  "Orange",
+  "world",
+  "Earth",
+  "psycho",
+  "umbrella",
+];
+
+const vowels = "aeiouAEIOU";
+const vowels_fruits = [];
+
+// for (fruit of fruits) {
+//   console.log(fruit);
+// }
+
+// for (fruit in fruits) {
+//   console.log(fruits[fruit]);
+// }
+
+// const result = fruits.filter((fruit) => vowels.includes(fruit[0]));
+// console.log(result);
+
+
+// for (fruit in fruits){
+//   for (v in vowels){
+//     if fruit[0] ===
+//   }
+// }
