@@ -1,0 +1,156 @@
+Python has many popular built-in functions that make programming easier and more efficient. Here are some of the most commonly used built-in functions:
+
+1. print()
+Outputs data to the console.
+Example:
+python
+Copy code
+print("Hello, World!")
+
+
+2. len()
+Returns the length (number of elements) of an object.
+Example:
+python
+Copy code
+my_list = [1, 2, 3]
+print(len(my_list))  # Output: 3
+
+
+3. type()
+Returns the type of an object.
+Example:
+python
+Copy code
+print(type(42))  # Output: <class 'int'>
+
+
+4. input()
+Reads a string from user input.
+Example:
+python
+Copy code
+name = input("Enter your name: ")
+print("Hello, " + name)
+
+
+5. int(), float(), str()
+Converts a value to an integer, float, or string.
+Example:
+python
+Copy code
+x = int("10")  # Converts string "10" to integer 10
+y = float("10.5")  # Converts string "10.5" to float 10.5
+z = str(10)  # Converts integer 10 to string "10"
+
+
+6. sum()
+Returns the sum of elements in an iterable.
+Example:
+python
+Copy code
+numbers = [1, 2, 3, 4]
+print(sum(numbers))  # Output: 10
+
+
+7. max() and min()
+Returns the maximum and minimum value of an iterable or arguments.
+Example:
+python
+Copy code
+print(max(1, 5, 10))  # Output: 10
+print(min([3, 1, 4, 2]))  # Output: 1
+
+
+8. abs()
+Returns the absolute value of a number.
+Example:
+python
+Copy code
+print(abs(-7))  # Output: 7
+
+
+9. sorted()
+Returns a sorted list from the elements of an iterable.
+Example:
+python
+Copy code
+numbers = [3, 1, 2]
+print(sorted(numbers))  # Output: [1, 2, 3]
+
+
+10. range()
+Generates a sequence of numbers, often used in loops.
+Example:
+python
+Copy code
+for i in range(5):
+    print(i)  # Output: 0 1 2 3 4
+
+
+11. map()
+Applies a function to all the items in an iterable.
+Example:
+python
+Copy code
+def square(x):
+    return x * 2
+numbers = [1, 2, 3]
+print(list(map(square, numbers)))  # Output: [2, 4, 6]
+
+
+12. filter()
+Filters elements of an iterable based on a function.
+Example:
+python
+Copy code
+def is_even(n):
+    return n % 2 == 0
+numbers = [1, 2, 3, 4, 5]
+even_numbers = list(filter(is_even, numbers))
+print(even_numbers)  # Output: [2, 4]
+
+
+13. zip()
+Combines two or more iterables element-wise.
+Example:
+python
+Copy code
+names = ["Alice", "Bob"]
+ages = [25, 30]
+combined = list(zip(names, ages))
+print(combined)  # Output: [('Alice', 25), ('Bob', 30)]
+
+
+14. enumerate()
+Adds a counter to an iterable and returns it as an enumerate object.
+Example:
+python
+Copy code
+items = ['apple', 'banana', 'orange']
+for index, item in enumerate(items):
+    print(index, item)
+# Output: 
+# 0 apple
+# 1 banana
+# 2 orange
+
+
+15. any() and all()
+any(): Returns True if any element of an iterable is true.
+all(): Returns True if all elements of an iterable are true.
+Example:
+python
+Copy code
+print(any([False, True, False]))  # Output: True
+print(all([True, True, False]))   # Output: False
+
+
+16. eval()
+Parses the expression passed and runs it as Python code.
+Example:
+python
+Copy code
+x = 1
+eval("x + 1")  # Output: 2
+These are just a few examples of Python's built-in functions that are widely used in everyday coding!

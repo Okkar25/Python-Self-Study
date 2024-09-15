@@ -11,7 +11,7 @@
 fruits = ["apple","orange", "grape", "peach"]
 
 
-iter_fruits = iter(fruits)
+# iter_fruits = iter(fruits)
 # print(next(iter_fruits))
 # print(next(iter_fruits))
 # print(next(iter_fruits))
@@ -29,7 +29,7 @@ iter_fruits = iter(fruits)
 
 # * Looping Through an Iterator
 
-tuple = ("apple","orange", "grape", "peach")
+# tuple = ("apple","orange", "grape", "peach")
 # for i in str:
 #     print(i)
 
@@ -152,3 +152,157 @@ my_iter = iter(my_class)
 # for i in my_iter:
 #     print(i)
     
+    
+# ---------------------------------------------------------------------------------------
+
+
+# let people: Array<string> = ["Bob", "James", "Steve", "Linus", "Bill"];
+# let people: string[] = ["Bob", "James", "Steve", "Linus", "Bill"];
+
+# iterators exhaust 
+    
+from typing import Iterator, Iterable, Generator
+
+people : list[str] = ["Bob","James", "Steve", "Linus", "Bill"]
+people_iter : Iterator[str] = iter(people)
+
+
+# print(next(people_iter))
+# print(list(people_iter)) 
+
+# print(next(people_iter))
+# print(next(people_iter))
+# print(next(people_iter))
+# print(next(people_iter))
+# print(next(people_iter))
+
+# print(list(people_iter)) 
+
+# for i in range(3):
+#     print(next(people_iter))
+
+# for i in range(3):
+#     print(next(people_iter))
+
+
+# * invalid iterators 
+# n = iter(None)
+# n = iter(100)
+
+# print(..., type(...))
+
+from typing import Iterator, Iterable, Generator
+
+people : list[str] = ["Bob","James", "Steve", "Linus", "Bill"]
+people_iter : Iterator[str] = iter(people)
+
+def say_hello(names : list[str] | tuple[str, ...]) -> None :
+    for name in names:
+        print(f"Hello {name}")
+        
+def say_hello(names : Iterable[str]) -> None :
+    for name in names:
+        print(f"Hello {name}")
+        
+
+
+# say_hello(["bob", "james", "luigi"])
+# say_hello(("bob", "james", "luigi"))
+# say_hello({"bob", "james", "luigi"})
+# say_hello("luigi")
+# say_hello([])
+# say_hello(1000)
+
+
+
+
+# def generate_range(n : int) -> Generator[int, None, None]:
+#     yield from range(n)
+
+# numbers :  Generator[int, None, None] = generate_range(n=3)
+
+fruits = ["apple", "banana", "cherry"]
+# iter_fruits = iter(fruits)
+# print(next(iter_fruits))
+
+iter_fruits = fruits.__iter__()
+# print(iter_fruits.__next__())
+# print(iter_fruits.__next__())
+# print(iter_fruits.__next__())
+# print(iter_fruits.__next__())\
+
+
+class TopTen: 
+    def __init__(self):
+        self.num = 1
+        
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if self.num <= 10:
+            val = self.num
+            self.num += 1
+            return val 
+        else:
+            raise StopIteration
+    
+top_ten = TopTen()
+
+# print(top_ten.__iter__())
+# print(top_ten.__next__())
+
+# iter_top_ten = top_ten.__iter__() # not necessary 
+# print(iter_top_ten.__next__())
+# print(iter_top_ten.__next__())
+# print(iter_top_ten.__next__())
+
+# for i in top_ten:
+#     print(i)
+
+# for i in iter_top_ten:
+#     print(i)
+
+
+class FruitIterator: 
+    def __init__(self, fruits):
+        self.fruits = fruits 
+        self.index = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.index < len(self.fruits):
+            val = self.fruits[self.index]
+            self.index += 1
+            return val
+        else:
+            raise StopIteration
+
+
+fruits = ["apple", "orange", "grape", "peach"]
+
+fruits_iter = FruitIterator(fruits)
+
+# print(fruits_iter.__next__())
+# print(fruits_iter.__next__())
+
+# for i in fruits_iter:
+#     print(i)
+
+
+nums = [1,23,4,67,4]
+
+iter_nums = iter(nums)
+
+# print(dir(iter_nums))
+
+
+# while True:
+#     try:
+#         item = next(iter_nums)
+#         print(item)
+#     except StopIteration:
+#         break
+

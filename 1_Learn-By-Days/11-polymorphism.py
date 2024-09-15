@@ -3,6 +3,14 @@
 # The word "polymorphism" means "many forms"
 # In programming it refers to methods/functions/operators with the same name that can be executed on many objects or classes.
 
+# Polymorphism => Greek word "have many forms or faces" 
+# Poly     => many
+# Morphe   => form 
+
+# Two ways to achieve polymorphism 
+# - Inheritance   => an object could be treated of the same type as a parent class 
+# - "Duck Typing" => Objects must hae necessary attributes / methods 
+
 
 # * Function Polymorphism
 
@@ -110,6 +118,7 @@ ship1 = Ship("Ocean Liner", "Touring 20")
 # print(ship1.move())
 # print(ship1.__repr__())
 # print(repr(ship1))
+# print(ship1)
 
 def travel(vehicle_type):
     return vehicle_type.move()
@@ -128,3 +137,54 @@ def travel(vehicle_type):
 # Ship and Plane classes also inherit brand, model, and move() from Vehicle, but they both override the move() method.
 # Because of polymorphism we can execute the same method for all classes
 
+
+
+
+
+from abc import ABC, abstractmethod
+
+class Shape:
+    @abstractmethod # make subclasses like circle / square / triangle require area() method
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+        
+    def area(self):
+        return 3.14 * self.radius ** 2
+        
+
+class Square(Shape):
+    def __init__(self, side):
+        self.side = side 
+        
+    def area(self):
+        return self.side **2
+
+class Triangle(Shape):
+    def __init__(self, base , height):
+        self.base = base
+        self.height = height
+        
+    def area(self):
+        return 0.5 * self.base * self.height
+    
+class Pizza(Circle):
+    def __init__(self, topping, radius):
+        super().__init__(radius)
+        self.topping = topping
+        
+        
+circle = Circle(4)
+square = Square(5)
+triangle = Triangle(6,7)
+pizza = Pizza("pepperoni", 15)
+
+shapes = [circle, square, triangle, pizza]
+
+# for shape in shapes:
+#     print(f"{shape.area()} cm²")
+
+print(pizza.area())

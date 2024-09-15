@@ -80,3 +80,34 @@ def order_pizza(size, *toppings, **details):
 
 # order_pizza("large", "cheese", "pepperoni", "sausage", delivery=True, tip=5)
 
+
+# -----------------------------------------------------------------------------------------
+
+
+list6 = [3,5.7, False]
+x = sum(list6)
+# print(x)
+
+fruits = ["apple", "orange", "peach", "grape", "ear", "umbrella", ]
+vowels = "aeiouAEIOU"
+
+# print((lambda x, y : x if x > y else y)(50, 100))
+
+# sort_fruits = sorted(fruits, key = lambda fruit : fruit[0])
+
+# sort_fruits = [fruit for fruit in fruits if fruit[0] in vowels]
+
+sort_fruits = list(filter(lambda fruit : fruit[0] in vowels , fruits ))
+
+# print(sorted(sort_fruits))
+
+sort_fruits = sorted(filter(lambda fruit : fruit[0] in vowels , fruits ))
+
+# print(sort_fruits)
+
+
+keys = ["name", "age", "RS", "job"]
+values = ("Okkar Aung", 23, False, "Software Developer")
+
+combined = list(zip(keys, values))
+print(combined)
