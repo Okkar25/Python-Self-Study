@@ -56,9 +56,11 @@ const vowels_fruits = [];
 // const result = fruits.filter((fruit) => vowels.includes(fruit[0]));
 // console.log(result);
 
-
 // for (fruit in fruits){
 //   for (v in vowels){
 //     if fruit[0] ===
 //   }
 // }
+
+const d = new Date();
+// console.log(d.getFullYear());
