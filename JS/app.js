@@ -64,3 +64,16 @@ const vowels_fruits = [];
 
 const d = new Date();
 // console.log(d.getFullYear());
+
+const myInfo1 = {
+  name: "Okkar Aung",
+  age: 23,
+  RS: false,
+};
+
+json = JSON.stringify(myInfo1);
+// console.log(myInfo1);
+// console.log(json);
+
+// localStorage.setItem("myInfo", JSON.stringify(myInfo1))
+// localStorage.setItem("myInfo", myInfo1)
