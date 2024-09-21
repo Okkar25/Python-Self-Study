@@ -224,7 +224,7 @@ y = os.path.basename(cur_dir)
 # print("dirname - ", x) 
 # print("basename - ", y) 
 
-# print(os.getlogin())
+print(os.getlogin())
 # print(os.getpid())
 # print(os.getppid())
 
