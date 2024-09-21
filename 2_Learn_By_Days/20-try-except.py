@@ -163,6 +163,8 @@ print(math.exp(1000)) # e^1000  # OverflowError: math range error
 # 15. StopIteration
 # Occurs when the next() function reaches the end of an iterator, such as a for-loop, and no more elements are available.
 
+# 16. FileExistsError
+# x mode 
 
 try:
     print(10 / 0)
