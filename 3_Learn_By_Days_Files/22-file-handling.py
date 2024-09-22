@@ -224,7 +224,105 @@ y = os.path.basename(cur_dir)
 # print("dirname - ", x) 
 # print("basename - ", y) 
 
-print(os.getlogin())
+# print(os.getlogin())
 # print(os.getpid())
 # print(os.getppid())
+
+
+# with open("stary night.jpg", "rb") as file:
+#     content = file.read()
+#     print(content)
+    
+
+
+# --------------------------------------------------------------------------------------------------
+
+# net ninja
+# fileObject.seek(offset[, whence])
+
+
+characters = ["Mario", "Luigi", "Mushroom", "Toad", "Peach", "Yoshi"]
+more_characters = ["Diddy Kong", "Donkey Kong", "Wuffle"]
+
+
+def write_characters_to_file(filename):
+    # open file
+    # file = open(filename, "w")
+    file = open(filename, "w+") # can also read and write
+    
+    # write to file
+    for name in characters:
+        file.write(name + "\n")
+        
+    # append to file
+    file = open(filename, "a+")
+    for name in more_characters:
+        file.write(name + "\n")
+        
+    # read the file
+    # file = open(filename, "r")
+    # content = file.read()
+    # print(content)
+    
+    file.seek(0,0)
+    content = file.read()
+    print(content)
+    
+    # close the file
+    file.close()
+    
+    return
+
+def main():
+    write_characters_to_file("characters.txt")
+
+
+if __name__ == "__main__":
+    # main()
+    pass
+    
+    
+
+# =========================================================
+
+
+# pathlib module (can also use os module)
+# from pprint import pprint
+# import pathlib
+
+# pprint(dir(pathlib))
+
+
+# * parents=True
+# Purpose: This argument ensures that if any of the parent directories in the path do not exist, they are also created.
+# For example, if you are trying to create the directory "A/B/C", but "A" and "B" do not exist, setting parents=True will create both "A" and "B" as well as "C". If you do not use parents=True, the operation will fail if the parent directories don’t exist.
+
+
+# * exist_ok=True
+# Purpose: This argument allows the program to ignore the error that would occur if the directory already exists.
+# Without exist_ok=True, calling mkdir() on an existing directory would raise a FileExistsError. By setting exist_ok=True, the method ensures that if the directory already exists, the program will proceed without any issues.
+
+
+from pathlib import Path
+
+
+file = open("characters.txt", "r")
+
+def create_path():
+    script_dir = Path(__file__).parent
+    # print(script_dir.parent)
+    # print(script_dir)
+    
+    path = script_dir / "characters"
+    path.mkdir(parents=True, exist_ok=True) 
+    
+    
+    
+    return 
+
+def main():
+    create_path()
+
+if __name__ == "__main__":
+    main()
 
