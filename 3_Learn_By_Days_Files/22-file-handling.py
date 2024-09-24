@@ -305,7 +305,6 @@ if __name__ == "__main__":
 
 from pathlib import Path
 
-
 file = open("characters.txt", "r")
 
 def create_path():
@@ -313,11 +312,12 @@ def create_path():
     # print(script_dir.parent)
     # print(script_dir)
     
+    # file path
     path = script_dir / "characters"
+
+    # making the directory
     path.mkdir(parents=True, exist_ok=True) 
-    
-    
-    
+
     return 
 
 def main():
@@ -326,3 +326,114 @@ def main():
 if __name__ == "__main__":
     main()
 
+
+
+# =========================================================
+
+
+
+from pathlib import Path
+
+def create_path():
+    script_dir = Path(__file__).parent
+    
+    path = script_dir / "characters"
+    path.mkdir(parents=True, exist_ok=True) 
+    
+    path = path / "delta.txt"
+    # file = open(path, "w")
+    file = path.open("w")
+    file.write("Supernova")
+    
+    file = path.open("a+")
+    file.write(" is a hero")
+    
+    # file.seek(0,0)
+    # content = file.read()
+    # print(content)
+    
+    file = path.open("r")
+    content = file.read()
+    print(content)
+    
+    file.close()
+    
+    # easy way
+    path.write_text("This is writing into file directly")
+    content = path.read_text()
+    print(content)
+    
+    return 
+
+def main():
+    create_path()
+
+if __name__ == "__main__":
+    # main()
+    pass
+
+
+# =========================================================
+
+
+# handling errors 
+
+# print(eval("pear"))
+# print(eval("'pear'"))
+# print(eval("'hello'"))
+
+def f():
+    x = 7
+    ans = input("Enter an expression: ")
+    print("Your expression is", eval(ans))
+    
+# f()
+
+
+# 1. Using vars() with a class object
+# When you use vars() on an instance of a class, it returns the instance's attributes in the form of a dictionary.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+p = Person("Okkar", 23)
+
+# print(p.__dict__)
+# print(vars(p))
+
+
+# 2. Using vars() without arguments
+# If vars() is called without any arguments, it returns the local variables in the current scope.
+
+
+x = 10
+y = 20
+z = x + y
+
+# print(vars())
+
+# 3. Modifying attributes using vars()
+# Since vars() returns a mutable dictionary, you can modify object attributes using it.
+
+# print(p.name)
+
+vars(p)["name"] = "Novak"
+
+# print(p.name)
+
+
+# 4. Using vars() with modules
+# You can also use vars() to inspect the attributes of a module.
+
+import math
+from pprint import pprint
+# print(vars(math))
+# print(dir(math))
+# pprint(vars(math))
+
+import calendar
+yy = 2024
+mm = 9
+# print(calendar.month(yy,mm, 3, 1))
