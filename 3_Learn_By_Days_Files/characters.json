@@ -1,0 +1,29 @@
+{
+    "characters": [
+        {
+            "id": 1,
+            "name": "Zhask",
+            "role": "Mage"
+        },
+        {
+            "id": 2,
+            "name": "Khaleed",
+            "role": "Fighter"
+        },
+        {
+            "id": 3,
+            "name": "Lesley",
+            "role": "Marksman"
+        },
+        {
+            "id": 4,
+            "name": "Atlas",
+            "role": "Tank"
+        },
+        {
+            "id": 5,
+            "name": "Angela",
+            "role": "Support"
+        }
+    ]
+}

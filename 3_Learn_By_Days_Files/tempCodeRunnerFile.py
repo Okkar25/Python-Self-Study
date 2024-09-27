@@ -1,2 +1,2 @@
-   # for row in names:
-    #     writer.writerow(row)
+    except Exception as e:
+        print(f"Unexpected error : {e}")

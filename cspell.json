@@ -11,6 +11,7 @@
         "Aung",
         "Bieber",
         "camelcase",
+        "csvfile",
         "demofile",
         "Diddy",
         "dunder",
@@ -26,11 +27,13 @@
         "icecream",
         "IIFE",
         "Inno",
+        "Khaleed",
         "Kyaw",
         "Misubishi",
         "Morphe",
         "Myint",
         "mysillyobject",
+        "Novak",
         "Okkar",
         "photoshop",
         "Ravenclaw",
@@ -47,7 +50,8 @@
         "unindexed",
         "wateraelons",
         "Wuffle",
-        "Yoshi"
+        "Yoshi",
+        "Zhask"
     ],
     "ignoreWords": [],
     "import": []

@@ -376,64 +376,103 @@ if __name__ == "__main__":
 # =========================================================
 
 
-# handling errors 
+from pathlib import Path 
 
-# print(eval("pear"))
-# print(eval("'pear'"))
-# print(eval("'hello'"))
-
-def f():
-    x = 7
-    ans = input("Enter an expression: ")
-    print("Your expression is", eval(ans))
+def open_file():
+    path = Path(__file__).parent
     
-# f()
+    path = path / "does" / "not" / "exist"
+    
+    # path.open("w") # create folder and files 
+    try:
+        file = path.open("r")
+        content = file.read9
+        print(content)
+        file.close()
+    except FileNotFoundError:
+        print(f"{path} does not exist")
+    except Exception as e:
+        print(f"Unexpected error : {e}")
+
+def main():
+    open_file()
+    
+if __name__ == "__main__":
+    # main()
+    pass
 
 
-# 1. Using vars() with a class object
-# When you use vars() on an instance of a class, it returns the instance's attributes in the form of a dictionary.
+# =========================================================
 
-class Person:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+
+
+from pathlib import Path 
+
+def open_file():
+    path = Path(__file__).parent / "characters" / "characters.txt"
+    
+    data = ["apple", "orange", "peach", "grape", "melon"]
+
+    # context manager 
+    with path.open("w+") as file:
+        for fruit in data:
+            file.write(fruit + "\n")
+           
+        file.seek(0,0) 
+        content = file.read()
+        print(content)
         
-p = Person("Okkar", 23)
-
-# print(p.__dict__)
-# print(vars(p))
-
-
-# 2. Using vars() without arguments
-# If vars() is called without any arguments, it returns the local variables in the current scope.
+def main():
+    open_file()
+    
+if __name__ == "__main__":
+    # main()
+    pass
 
 
-x = 10
-y = 20
-z = x + y
-
-# print(vars())
-
-# 3. Modifying attributes using vars()
-# Since vars() returns a mutable dictionary, you can modify object attributes using it.
-
-# print(p.name)
-
-vars(p)["name"] = "Novak"
-
-# print(p.name)
+# =========================================================
 
 
-# 4. Using vars() with modules
-# You can also use vars() to inspect the attributes of a module.
-
-import math
+from pathlib import Path
+import json
 from pprint import pprint
-# print(vars(math))
-# print(dir(math))
-# pprint(vars(math))
 
-import calendar
-yy = 2024
-mm = 9
-# print(calendar.month(yy,mm, 3, 1))
+characters = {
+    "characters" : [
+        {"id": 1, "name":"Zhask", "role":"Mage"},
+        {"id": 2, "name":"Khaleed", "role":"Fighter"},
+        {"id": 3, "name":"Lesley", "role":"Marksman"},
+        {"id": 4, "name":"Atlas", "role":"Tank"},
+        {"id": 5, "name":"Angela", "role":"Support"},
+    ]
+}
+
+path = Path(__file__).parent / "characters.json"
+
+def write_json():
+    with path.open("w") as json_file:
+        json.dump(characters, json_file, indent=4)
+
+def read_json():
+    with path.open("r") as json_file:
+        # content = json_file.read()     # return str 
+        content = json.load(json_file) # return dict
+        return content
+
+
+def main():
+    write_json()
+    data = read_json()
+    print(data, type(data))
+
+if __name__ == "__main__":
+    main()
+    
+    
+1,920,000
+    
+1,818,750
+
+101,250
+
+

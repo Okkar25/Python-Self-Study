@@ -115,3 +115,91 @@ z = x + y
 #     writer.writerows(data)
     
 
+animal = 'Huskies'
+# print(" ".join(animal.upper()) )
+
+
+# list = ["apple", "banana", "mango", "peach", "apple", "orange", "mango"]
+
+# duplicate = {}
+
+# for fruit in list:
+#     if fruit in duplicate:
+#         duplicate[fruit] += 1
+#     else:
+#         duplicate[fruit] = 1
+
+# for fruit in duplicate:
+#     print(f"{fruit.upper()} {duplicate[fruit]}")
+
+# for fruit in duplicate:
+#     if duplicate[fruit] == 2:
+#         print(fruit)
+       
+        
+txt = "Hello! I am John. May I have a packet of chips, dipped in cheese ?"
+
+for punctuation in "!.,?":
+    txt = txt.replace(punctuation, "")
+
+# handling errors 
+
+# print(eval("pear"))
+# print(eval("'pear'"))
+# print(eval("'hello'"))
+
+def f():
+    x = 7
+    ans = input("Enter an expression: ")
+    print("Your expression is", eval(ans))
+    
+# f()
+
+
+# 1. Using vars() with a class object
+# When you use vars() on an instance of a class, it returns the instance's attributes in the form of a dictionary.
+
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+p = Person("Okkar", 23)
+
+# print(p.__dict__)
+# print(vars(p))
+
+
+# 2. Using vars() without arguments
+# If vars() is called without any arguments, it returns the local variables in the current scope.
+
+
+x = 10
+y = 20
+z = x + y
+
+# print(vars())
+
+# 3. Modifying attributes using vars()
+# Since vars() returns a mutable dictionary, you can modify object attributes using it.
+
+# print(p.name)
+
+vars(p)["name"] = "Novak"
+
+# print(p.name)
+
+
+# 4. Using vars() with modules
+# You can also use vars() to inspect the attributes of a module.
+
+import math
+from pprint import pprint
+# print(vars(math))
+# print(dir(math))
+# pprint(vars(math))
+
+import calendar
+yy = 2024
+mm = 9
+# print(calendar.month(yy,mm, 3, 1))
