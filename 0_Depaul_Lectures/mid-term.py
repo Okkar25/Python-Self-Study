@@ -389,11 +389,11 @@ def taller(first_height, second_height):
         return second_height
 
 
-print(taller("6ft2in","4ft11in"))
-print(taller("5ft2in","5ft11in"))
-print(taller("6ft2in","4ft11in"))
-print(taller("5ft2in","4ft11in"))
-print(taller("4ft2in","4ft11in"))
-print(taller("5ft9in","5ft11in"))
-print(taller("5ft9in","5ft11in") == '5ft11in')
+# print(taller("6ft2in","4ft11in"))
+# print(taller("5ft2in","5ft11in"))
+# print(taller("6ft2in","4ft11in"))
+# print(taller("5ft2in","4ft11in"))
+# print(taller("4ft2in","4ft11in"))
+# print(taller("5ft9in","5ft11in"))
+# print(taller("5ft9in","5ft11in") == '5ft11in')
 
