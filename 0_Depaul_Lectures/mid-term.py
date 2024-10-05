@@ -8,13 +8,14 @@
 def numCapitalized(sentence):
     word_list = sentence.split(" ")
     count = 0
-    
+
     for word in word_list:
         if word[0].isupper():
             count += 1
-            
+
     return count
-            
+
+
 # print(numCapitalized('This sentence has one such'))
 # print(numCapitalized('This sentence has ONE more'))
 # print( numCapitalized('ALL THESE ARE'))
@@ -28,45 +29,49 @@ def numCapitalized(sentence):
 
 # Implement a function gct according to these guidelines:
 # The function accepts a single positive integer which represents a number of tablespoons of a
-# liquid. 
-# You may assume that this number is always between 0 and 25599 (inclusive of both). 
+# liquid.
+# You may assume that this number is always between 0 and 25599 (inclusive of both).
 # The function returns a formatted str containing an equivalent number of gallons, cups and
 # tablespoons. The answer should use as many gallons, then cups as possible. For example
 # gct(312) would return '01g,03c,08t' as 312 tablespoons is equivalent to 1 gallon, 3 cups,
 # and 8 tablespoons.
-# Each of the output quantities (gallons, cups, tablespoons) should occupy two digits. 
+# Each of the output quantities (gallons, cups, tablespoons) should occupy two digits.
 # If the values have less than two digits, they should be padded with leading zeroes. I.e., 2
-# cups is represented by '02c' . 
+# cups is represented by '02c' .
 # If you look things up, cite them (same goes for all problems)
 
 # * 1 gallon = 16 cups
 # * 1 cup = 16 tablespoons
 
+
 def gct(t):
-    # conversion factors 
+    # conversion factors
     # 1 gallon = 16 cups
     # 1 cup = 16 tablespoons
 
     tablespoons_per_gallon = 256
     tablespoons_per_cup = 16
-    
-    # calculate the number of gallons 
-    gallons = (t // tablespoons_per_gallon )
+
+    # calculate the number of gallons
+    gallons = t // tablespoons_per_gallon
     tablespoons_remaining = t % tablespoons_per_gallon
-    
+
     # calculate the number of cups
     cups = tablespoons_remaining // tablespoons_per_cup
     tablespoons_remaining = tablespoons_remaining % tablespoons_per_cup
-    
+
     tablespoons = tablespoons_remaining
-    
+
     # return f"{gallons:02}g, {cups:02}c, {tablespoons:02}t"
-    
+
     result = "{:02}g, {:02}c, {:02}t"
     # return result.format(gallons, cups, tablespoons)
-    
-    return f"{str(gallons).zfill(2)}g, {str(cups).zfill(2)}c, {str(tablespoons).zfill(2)}t"
-    
+
+    return (
+        f"{str(gallons).zfill(2)}g, {str(cups).zfill(2)}c, {str(tablespoons).zfill(2)}t"
+    )
+
+
 # print(gct(312))
 # print(gct(777))
 # print(gct(25599))
@@ -78,18 +83,18 @@ def gct(t):
 
 def priceTShirt(size, slogan):
     # S => 12 / M => 15 / L => 18 ( dollar )
-    # lower => 25 / upper => 30 / punctuation => 20 / \n " " => 0 ( cents )
+    # lower => 25 / upper => 30 / punctuation => 20 / " " \n => 0 ( cents )
     total = 0
-    
+
     if size == "S":
         total += 12
     elif size == "M":
         total += 15
     else:
         total += 18
-        
+
     slogan_list = slogan.split(" ")
-    
+
     for word in slogan_list:
         for char in word:
             if char in ".,!'\"?:":
@@ -100,13 +105,13 @@ def priceTShirt(size, slogan):
                 total += 0.25
             # elif char == "\n" or char == " ":
             #     total += 0
-        
+
     return total
 
 
 def priceTShirt(size, slogan):
     base_prices = {"S": 12, "M": 15, "L": 18}
-    
+
     price = base_prices.get(size, 0)
 
     for char in slogan:
@@ -114,14 +119,13 @@ def priceTShirt(size, slogan):
             price += 0.30
         elif char.islower():
             price += 0.25
-        elif char in ".,!'\"?:" :
+        elif char in ".,!'\"?:":
             price += 0.20
-    
-    
+
     # price = f"{price:.2f}"
     # return float(price)
 
-    return round(price, 2)        
+    return round(price, 2)
 
 
 # print(priceTShirt('S',"Vote!"))
@@ -136,16 +140,18 @@ def priceTShirt(size, slogan):
 
 # * alterCase
 
+
 def alterCase(str):
     result = ""
-    
+
     for i in range(len(str)):
         if i % 2 == 0:
             result += str[i].upper()
         else:
             result += str[i].lower()
-    
+
     return result
+
 
 # print(alterCase('apple'))
 # print(alterCase('ABRACADABRA'))
@@ -173,11 +179,12 @@ def alterCase(str):
 # 1 Nickel = 5 cents
 # 1 Penny = 1 cent
 
+
 def piggyBank(coins):
-    currency = {"Q": 25, "D": 10, "N": 5, "P": 1 }
-    
+    currency = {"Q": 25, "D": 10, "N": 5, "P": 1}
+
     total_cents = 0
-    
+
     for coin in coins:
         if coin == "Q":
             total_cents += currency[coin]
@@ -189,7 +196,7 @@ def piggyBank(coins):
             total_cents += currency[coin]
         else:
             total_cents += 0
-            
+
     return total_cents
 
 
@@ -211,14 +218,15 @@ def piggyBank(coins):
 # returns a (1-dimensional) list containing the odd numbers from the input list
 
 
-def  odds(TwoDlist):
+def odds(TwoDlist):
     odd_list = []
-    
+
     for list in TwoDlist:
         for num in list:
             if num % 2 == 1:
                 odd_list.append(num)
     return odd_list
+
 
 # print(odds( [[1,2,3],[4,5,6]] ))
 # print(odds( [[1,2,3],[4,5,6], [12,14], [13,15]] ))
@@ -249,17 +257,18 @@ def findWordOfLength(length, sentence):
     # for char in sentence:
     #     if char not in ".,;!?":
     #         str += char
-    
+
     for punctuation in ".,;!?":
         sentence = sentence.replace(punctuation, "")
-    
+
     word_list = sentence.split(" ")
-    
+
     for i in range(len(word_list)):
         if len(word_list[i]) == length:
             return i
-    
+
     return -1
+
 
 # print(findWordOfLength(4,"Able was I ere I saw Elba."))
 # print( findWordOfLength(1,"Able was I ere I saw Elba."))
@@ -286,14 +295,14 @@ def findWordOfLength(length, sentence):
 # followed by 'in'
 # e.g., "6ft2in" means 6 feet and 2 inches.
 # returns the taller of the two input strs
- 
+
 
 def taller(first_height, second_height):
     dimensions = []
-    num = ''
+    num = ""
     first = 0
     second = 0
-    
+
     # calculating First height in inches
     for char in first_height:
         if char.isdigit():
@@ -301,34 +310,33 @@ def taller(first_height, second_height):
         else:
             if num:  # If we reached a non-digit and num is not empty
                 dimensions.append(int(num))  # Convert to integer and add to the list
-                num = ''  # Reset num for the next potential number
-                
+                num = ""  # Reset num for the next potential number
+
     for i in range(len(dimensions)):
         if i == 0:
             first += dimensions[i] * 12
         elif i == 1:
             first += dimensions[i]
-    
+
     # cleaning dimension list for second height calculation
     dimensions = []
-    
+
     # calculating Second height in inches
     for char in second_height:
         if char.isdigit():
-            num += char  
+            num += char
         else:
-            if num:  
-                dimensions.append(int(num))  
-                num = '' 
-                
+            if num:
+                dimensions.append(int(num))
+                num = ""
+
     for i in range(len(dimensions)):
         if i == 0:
             second += dimensions[i] * 12
         elif i == 1:
             second += dimensions[i]
-            
-    
-    # comparing two height which is higher 
+
+    # comparing two height which is higher
     if first > second:
         return first_height
     else:
@@ -343,45 +351,41 @@ def taller(first_height, second_height):
     ft_in = []
     first = 0
     second = 0
-    
+
     # filtering out digits for first height
     remove_ft = first_height.split("ft")
     remove_in = remove_ft[1].split("in")
-    
+
     for list in [remove_ft, remove_in]:
         for num in list:
             if num.isdigit():
                 ft_in.append(eval(num))
-    
-    
-    # calculating first height in inches          
+
+    # calculating first height in inches
     for i in range(len(ft_in)):
         if i == 0:
             first += ft_in[i] * 12
         elif i == 1:
             first += ft_in[i]
 
-    
     # cleaning up ft_in to calculate second height
     ft_in = []
-
 
     # filtering out digits for first height
     remove_ft = second_height.split("ft")
     remove_in = remove_ft[1].split("in")
-    
+
     for list in [remove_ft, remove_in]:
         for num in list:
             if num.isdigit():
                 ft_in.append(eval(num))
-    
-    
+
     # calculating second height in inches
     for i in range(len(ft_in)):
         if i == 0:
             second += ft_in[i] * 12
         elif i == 1:
-            second += ft_in[i]    
+            second += ft_in[i]
 
     if first > second:
         return first_height
@@ -397,3 +401,35 @@ def taller(first_height, second_height):
 # print(taller("5ft9in","5ft11in"))
 # print(taller("5ft9in","5ft11in") == '5ft11in')
 
+
+# =======================================================================
+
+
+def taller(height1, height2):
+    # Helper function to convert height from "XftYin" to total inches
+    def height_in_inches(height):
+        # Find the position of 'ft' and 'in'
+        ft_index = height.index("ft")
+        in_index = height.index("in")
+
+        # Extract the feet and inches part
+        feet = int(height[:ft_index])  # Everything before 'ft' is the feet
+        inches = int(
+            height[ft_index + 2 : in_index]
+        )  # Everything between 'ft' and 'in' is the inches
+
+        # Convert the total height into inches
+        return feet * 12 + inches
+
+    # Compare the two heights in inches
+    if height_in_inches(height1) > height_in_inches(height2):
+        return height1
+    else:
+        return height2
+
+
+# Example test cases
+print(taller("6ft2in", "4ft11in"))  # Output: '6ft2in'
+print(taller("5ft2in", "5ft11in"))  # Output: '5ft11in'
+print(taller("10ft11in", "6ft2in"))  # Output: '10ft11in'
+print(taller("10ft11in", "10ft10in"))  # Output: '10ft11in'
