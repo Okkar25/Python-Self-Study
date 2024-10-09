@@ -21,6 +21,27 @@ def numPairs(target_num, list):
     return len(pairs) // 2
 
 
+# =========================================================================================
+
+
+def numPairs(target, numbers):
+    count = 0
+    seen = {}
+
+    for num in numbers:
+        complement = target - num
+        if complement in seen and seen[complement] > 0:
+            count += 1
+            seen[complement] -= 1
+        else:
+            if num in seen:
+                seen[num] += 1
+            else:
+                seen[num] = 1
+                
+    return count
+
+
 # --------------------------------------------------------------------------------------------
 
 
@@ -35,6 +56,20 @@ def hideShow(input_str, masking_seq):
                 result_str += "#"
 
     return result_str
+
+
+# =========================================================================================
+
+
+def hideShow(input_string, masking_string):
+    result = ""
+    
+    for i in range(len(input_string)):
+        if masking_string[i] == '1':
+            result += input_string[i]
+        else:
+            result += '#'
+    return result
 
 
 # ---------------------------------------------------------------------------------------------
