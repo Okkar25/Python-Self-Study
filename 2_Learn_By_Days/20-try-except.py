@@ -172,4 +172,80 @@ except ZeroDivisionError:
     print("You can't divide by zero!")
 
 
-# https://www.w3schools.com/python/python_ref_exceptions.asp
+
+# * https://www.w3schools.com/python/python_ref_exceptions.asp
+
+
+
+# try:
+#     print(x)
+# except Exception as e:
+#     print(f"Error occurs : {type(e).__name__}")
+
+# try:
+#     # x = 10
+#     print(x)
+# except NameError:
+#     print("This is a Name Error.")
+# except IndentationError:
+#     print("This is a Indentation Error.")
+
+# try:
+#     # x = -10
+#     # print(x / 0)
+#     # print(x)
+
+#     # if x < 0:
+#     #     raise ValueError("Value cannot be negative.")
+#     x = 10
+
+#     if type(x) is not str:
+#         raise TypeError("Only str value allowed")
+
+# except ValueError as v:
+#     print("Error :", v)
+
+# except NameError as e:
+#     print("Something wrong with name not existing")
+
+# except ZeroDivisionError as z:
+#     print("Cannot be divided by zero")
+
+# except Exception as error:
+#     print(error)
+
+# else:
+#     print("There is no error.")
+
+# finally:
+#     print("Completed")
+
+
+# * custom exception
+
+class JustNotCoolError(Exception):
+    pass
+
+
+try:
+    # raise Exception("I'm a custom exception.")
+    raise JustNotCoolError("This isn't just cool, mann.")
+    
+
+except ValueError as v:
+    print("Error :", v)
+
+except NameError as e:
+    print("Something wrong with name not existing")
+
+except ZeroDivisionError as z:
+    print("Cannot be divided by zero")
+
+except Exception as error:
+    print(error)
+
+else:
+    print("There is no error.")
+
+finally:
+    print("Completed")
