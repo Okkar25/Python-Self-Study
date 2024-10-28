@@ -186,7 +186,7 @@ def craps():
 # --------------------------------------------------------------------------------------
 
 
-# random.seed(1)
+# random.seed(0)
 
 def testCraps(n):
     result = [craps() for i in range(n)]

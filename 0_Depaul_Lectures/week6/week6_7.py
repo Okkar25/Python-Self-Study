@@ -360,32 +360,32 @@ data = zip(names, phones)
 
 # Korea Problem
 
-items = {"Cola": 3, "Pepsi": 5, "Bubble Tea": 2}
-continue_adding = True
-secret_word = "Skywalker"
-print("Initial Items : ", items)
+# items = {"Cola": 3, "Pepsi": 5, "Bubble Tea": 2}
+# continue_adding = True
+# secret_word = "Skywalker"
+# print("Initial Items : ", items)
 
 
-def AddInventory(dict, name, num):
-    if name in dict:
-        dict[name] += num
-        print(items)
-    else:
-        dict[name] = num
-        print(items)
+# def AddInventory(dict, name, num):
+#     if name in dict:
+#         dict[name] += num
+#         print(items)
+#     else:
+#         dict[name] = num
+#         print(items)
 
 
-while continue_adding:
-    item_name = input("Enter your item : ")
+# while continue_adding:
+#     item_name = input("Enter your item : ")
 
-    if item_name == secret_word:
-        print("Your updated items is : ", items)
-        break
+#     if item_name == secret_word:
+#         print("Your updated items is : ", items)
+#         break
 
-    item_qty = int(input("Enter item quantity : "))
-    AddInventory(items, item_name, item_qty)
-else:
-    print(items)
+#     item_qty = int(input("Enter item quantity : "))
+#     AddInventory(items, item_name, item_qty)
+# else:
+#     print(items)
 
 
 # * encode
@@ -469,7 +469,7 @@ Ckilntkyln kjl mcl wmcbacr rjlkx ahlk -- ulx'n hm imjl mo xwmnl! """
 code = {"O": "f"}
 
 msg = msg.lower()
-print(encode(msg, code))
+# print(encode(msg, code))
 
 # msg is written in English, certain letters are more frequent. We can use our previous work to compute
 # frequencies:
@@ -483,3 +483,26 @@ print(encode(msg, code))
 # 'D': 5, '-': 6, 'V': 4, '*': 2, '!': 1}
 
 
+num_list = [-3, 20, 12, -7, 10, 20, -50, 54, -11, 45]
+
+
+def bubble_sort(list):
+    n = len(list)
+
+    for i in range(n):
+        swapped = False
+
+        for j in range(0, n - i - 1):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+                swapped = True
+
+        # to avoid unnecessary iteration
+        if not swapped:
+            break
+
+    return list
+
+
+print(num_list)
+print(bubble_sort(num_list))
