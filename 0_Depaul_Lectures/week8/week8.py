@@ -432,6 +432,53 @@ def __eq__(self, other):
     return self.x == other.x and self.y == other.y
 
 
+# Point Class - Version 2 (With Magic Methods)
+class Point:
+    def __init__(self, x=0, y=0):
+        self.x = x  # x-coordinate
+        self.y = y  # y-coordinate
+
+    # Automatically called when printing the object or using repr()
+    def __repr__(self):
+        return f"Point({self.x}, {self.y})"
+
+    # Automatically called when adding two Point objects using the + operator
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    # Automatically called when using str() or printing the object
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+    # Optional: You can add more dunder methods for subtraction, equality, etc.
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __sub__(self, other):
+        return Point(self.x - other.x, self.y - other.y)
+
+
+# Example usage (v2):
+p1 = Point(2, 3)
+p2 = Point(4, 5)
+
+# Automatically uses __repr__() when printing the object
+# print(p1)  # Output: (2, 3)
+# print(p2)  # Output: (4, 5)
+
+# Adding two points using the + operator (calls __add__())
+p3 = p1 + p2
+# print(p3)  # Output: (6, 8)
+
+# Checking equality (calls __eq__())
+p4 = Point(2, 3)
+# print(p1 == p4)  # Output: True (because they have the same coordinates)
+
+p4 = p2 - p1
+# print(p4)
+
+
+
 #  magic/dunder methods
 
 #  +    =>                 __add__

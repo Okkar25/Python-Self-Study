@@ -11,4 +11,15 @@ saw = {
     ],
 }
 
-# dict 
+# dict
+
+a = [1, 2, 3]
+# b = a  # aliasing
+b = a[:]
+
+# print(a == b)
+# print(a is b)
+
+
+# When two variables are aliases, any change made to the object through one variable will be reflected when accessed through the other variable
+
