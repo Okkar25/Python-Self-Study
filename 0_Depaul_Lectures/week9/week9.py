@@ -174,6 +174,12 @@ intersect = {2, 3, 4, 5, 6} & {3, 5, 7, 9}
 union = {2, 3, 4, 5, 6} | {3, 5, 7, 9}
 
 
+# Queue class using a list as an internal representation shows composition
+# You use a list to build the queue's functionality without inheriting from it.
+# This approach is generally more flexible and allows you to customize behavior while encapsulating the underlying data structure.
+
+
+
 # * inheritance
 
 # inherited=sub=child class
@@ -243,5 +249,25 @@ m.append(10)
 
 m.apply(add_ten)
 
-print(m)
+# print(m)
 
+
+class MyList(list):
+    def __repr__(self):
+        ans = "["
+        for item in self:
+            ans += repr(item) + ","
+        
+        return ans[:-1] + "]"
+    
+    def apply(self, function):
+        for i in range(len(self)):
+            self[i] = function(self[i])
+
+def double(num):
+    return num * num
+
+m1 = MyList([1, 2, 3, 4, 5])
+print(m1)
+m1.apply(double)
+print(m1)
