@@ -1,18 +1,20 @@
 class Pizza:
     def __init__(self, size="M", toppings=set()):
         self.size = size
-        self.toppings = toppings
+        self.toppings = set(toppings)
 
     def __repr__(self):
         # return f"Pizza('{self.size}',{self.toppings})"
-        sorted_toppings = sorted(self.toppings)
+        return f"Pizza({repr(self.size)},{self.toppings})"
+
+        # sorted_toppings = sorted(self.toppings)
         # return f"{sorted_toppings}"
         # return f"Pizza('{self.size}', {{{ ", ".join(str(topping) for topping in sorted_toppings) }}}"
 
-        if not self.toppings:
-            return f"Pizza('{self.size}',{self.toppings})"
-        else:
-            return f"Pizza('{self.size}',{{{ ", ".join(repr(topping) for topping in sorted_toppings) }}})"
+        # if not self.toppings:
+        #     return f"Pizza('{self.size}',{self.toppings})"
+        # else:
+        #     return f"Pizza('{self.size}',{{{ ", ".join(repr(topping) for topping in sorted_toppings) }}})"
 
     def setSize(self, new_size):
         self.size = new_size
@@ -42,10 +44,19 @@ class Pizza:
             total += len(self.toppings) * 1.85
 
         return total
+    
+    def price(self):
+        size_prices = {"S": 6.25, "M": 9.95, "L": 12.95}
+        topping_prices = {"S": 0.7, "M": 1.45, "L": 1.85}
+
+        size_price = size_prices[self.size]
+        topping_price = topping_prices[self.size] * len(self.toppings)
+
+        return size_price + topping_price
 
     def __eq__(self, other):
         if isinstance(other, Pizza):
-            return self.size == other.size and len(self.toppings) == len(other.toppings)
+            return self.size == other.size and self.toppings == other.toppings
         else:
             return False
 
@@ -82,7 +93,8 @@ def orderPizza():
 
     print("Thanks for ordering!")
     print(f"Your pizza costs ${p.price()}")
-    print(p)
+    # print(p)
+    return p
 
 
 # p = orderPizza()
