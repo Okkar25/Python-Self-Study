@@ -221,3 +221,94 @@ class Queue(list):
 class CuttingError(Exception):
     pass
 
+
+# * strlist
+# a list that only holds strings any attempt to add a non-string will raise a exercise in data validation
+
+
+# >>> s = strlist()
+# >>> s.append( "a" )
+# >>> s
+# strlist(["a"])
+# >>> s.append( 3 ) # not a str!
+# ...
+# TypeError
+# >>> s
+# strlist(["a"])
+
+
+lst = []
+lst.append(3)
+lst[0] = 99
+lst.insert(0, 3.2)
+lst.append([2, 3])
+lst.extend([2, 3])
+
+lst = list([1, 2.3, 4.3])
+
+# print(lst)
+
+
+#  We must override these methods:
+#  insert
+#  __setitem__
+#  append - insert at the end
+#  extend - iterated append
+#  __init__
+
+
+#  Notes:
+#  1. methods listed in order written
+#  2. each add/set method must either validate str or call a method that does
+#  3. inherit all methods that remove/get, won't cause problems
+
+# * Here in strlist class, inherit methods are used
+# * meaning each method invoke other method avoiding circular definitions
+
+
+class strlist(list):
+
+    def __repr__(self):
+        # return f"strlist({self})" # circular definition
+        # return f"strlist({super().__repr__()})"
+        return f"strlist{list.__repr__(self)}"
+
+    def insert(self, index, item):
+        if type(item) == str:
+            list.insert(self, index, item)
+            # super().__insert__(index, item)
+        else:
+            raise TypeError(f"{item} is not a str")
+
+    # def insert(self, index, item):
+    #     if isinstance(self, str):
+    #         super().insert(index, item)
+    #     else:
+    #         raise TypeError(f"{item} is not a str")
+
+    # s[1] = 'apple' = strlist.__setitem__(s,1,'apple')
+    def __setitem__(self, index, item):
+        if type(item) == str:
+            list.__setitem__(self, index, item)
+        else:
+            raise TypeError(f"{item} is not a str")
+
+    # append is an insert after all items
+    # validate by calling insert
+    def append(self, item):
+        self.insert(len(self), item)
+        # list.append(self, item)
+
+    # extend as an iterated append
+    def extend(self, iterable):
+        for item in iterable:
+            self.append(item)
+        # list.extend(self, item)
+
+    def __init__(self, iterable=[]):
+        self.extend(iterable)
+
+    def __add__(self, other):
+        if isinstance(other, strlist):
+            return strlist(list.__add__(self, other))
+            # return strlist(super().__add__(other))
