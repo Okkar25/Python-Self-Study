@@ -197,14 +197,11 @@ def hideShow(input_string, masking_string):
 def clean(input_str):
 
   start = 0
-
   while input_str[start] in "\n\t ":
     start += 1
 
   end = len(input_str) - 1
   while input_str[end] in "\n\t ":
-
-    
     end -= 1
 
   return input_str[start : end + 1 ]

@@ -77,18 +77,18 @@ def interleaved(seq1, seq2):
             j += 1
 
     # Append remaining elements (if any) from seq1
-    while i < len(seq1):
-        result.append(seq1[i])
-        i += 1
+    # while i < len(seq1):
+    #     result.append(seq1[i])
+    #     i += 1
 
     # Append remaining elements (if any) from seq2
-    while j < len(seq2):
-        result.append(seq2[j])
-        j += 1
+    # while j < len(seq2):
+    #     result.append(seq2[j])
+    #     j += 1
 
     # second method
-    # result.extend(seq1[i:])
-    # result.extend(seq2[j:])
+    result.extend(seq1[i:])
+    result.extend(seq2[j:])
 
     return result
 

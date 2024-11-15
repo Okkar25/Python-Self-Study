@@ -1,3 +1,5 @@
+"""
+
 M
 mushroom
 onion
@@ -98,3 +100,4 @@ put stdin back to original, again, shouldnt cause error
 >>> sys.stdin = si  # return stdin
 
 
+"""

@@ -110,7 +110,9 @@ def guessCode(length, letters):
             guess_count -= 1
             # print(f"\nYou gave up after {guess_count} guesses. ")
             # print(f"The secret code is {secret.getSecret()}.")
-            print(f"\nYou gave up after {guess_count} guesses. \nThe secret code is {secret.getSecret()}.")
+            print(
+                f"\nYou gave up after {guess_count} guesses. \nThe secret code is {secret.getSecret()}."
+            )
             break
 
         elif secret.correct(guess):
@@ -134,3 +136,26 @@ if __name__ == "__main__":
     import doctest
 
     print(doctest.testfile("final_problemsTEST.py"))
+
+
+# * import sys
+# * si = sys.stdin
+# * sys.stdin = open('inputs.txt')
+
+# put stdin back to original
+# * sys.stdin = si
+
+
+# class SomeList(list): # []
+#     def __init__(self, iterable=[]):
+#         self.lst = list(iterable)
+        # list.__init__(self, iterable)
+        # pass
+
+# s = SomeList([1, 2])     # lst => [1, 2]
+# s.append(3)              # list instance => [3]
+# print(s)
+# s1 = SomeList([9, 10])
+# s.lst.append(3)
+# print(s.lst)
+# print(s1)
